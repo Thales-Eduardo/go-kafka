@@ -9,9 +9,9 @@ import (
 func main() {
 	configMap := &kafka.ConfigMap{
 		"bootstrap.servers": "0.0.0.0:9094",
-		"client.id":         "goapp-consumer", // o id deve ser unico
+		"client.id":         "goapp-consumer", // o id deve ser único
 		"group.id":          "goapp-group2",
-		"auto.offset.reset": "earliest", // pegar as mensagens des do inicio
+		"auto.offset.reset": "earliest", // pegar as mensagens desde o início
 	}
 	c, err := kafka.NewConsumer(configMap)
 	if err != nil {
