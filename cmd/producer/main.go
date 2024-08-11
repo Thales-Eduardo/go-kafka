@@ -20,7 +20,7 @@ func main() {
 func NewKafkaProducer() *kafka.Producer {
 	configMap := &kafka.ConfigMap{
 		"bootstrap.servers":   "0.0.0.0:9094",
-		"delivery.timeout.ms": "0", //tempo de espera para concluir o registro da mensagem
+		"delivery.timeout.ms": "0", // tempo de espera para concluir o registro da mensagem
 		"acks":                "all",
 		"enable.idempotence":  "true",
 	}
@@ -53,7 +53,7 @@ func DeliveryReport(deliveryChan chan kafka.Event) {
 				fmt.Println("Erro ao enviar")
 			} else {
 				fmt.Println("Mensagem enviada:", ev.TopicPartition)
-				// registrar no banco de dados que a mensagem foi processado.
+				// registrar no banco de dados que a mensagem foi processada.
 			}
 		}
 	}
